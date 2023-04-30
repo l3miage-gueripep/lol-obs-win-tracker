@@ -22,6 +22,7 @@ def get_summoner_data(summoner_name):
     return data
 
 
+
 def get_last_game_id(summoner_puuid):
     global headers
     match_history_url = f'https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/{summoner_puuid}/ids?count=1'
@@ -45,3 +46,5 @@ def is_last_game_won(summoner_name):
     summoner_id = summoner_data['id']
     summoner_puuid = summoner_data['puuid']
     return is_won(get_last_game_id(summoner_puuid), summoner_id)
+
+print(get_summoner_data("Caca Malveillant"))
